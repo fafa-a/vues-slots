@@ -12,8 +12,7 @@
           />
           <div>
             <div>{{ item.name.first }}</div>
-            <slot></slot>
-            {{ secondrow(item) }}
+            <slot name="secondrow" :item="item"></slot>
           </div>
         </div>
       </li>
@@ -26,12 +25,6 @@
 </template>
 
 <script setup>
-defineProps({
-  secondrow: {
-    type: Function,
-    default: () => {},
-  },
-})
 const AllStates = {
   idle: "idle",
   loading: "loading",

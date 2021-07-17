@@ -1,5 +1,11 @@
 <template>
-  <AppUserList :secondrow="(user) => user.phone"> </AppUserList>
+  <AppUserList>
+    <template #secondrow="{ item }">
+      <a :href="'tel:' + item.phone">{{ item.phone }} </a>
+      <br />
+      <a :href="'mailto:' + item.email">{{ item.email }} </a>
+    </template>
+  </AppUserList>
 </template>
 
 <script setup>
