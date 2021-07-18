@@ -1,15 +1,15 @@
 <template>
   <AppUserList>
-    <template #secondrow="{ item }">
-      <a :href="'tel:' + item.phone">{{ item.phone }} </a>
-      <br />
-      <a :href="'mailto:' + item.email">{{ item.email }} </a>
+    <template #userList="{ list, count }">
+      {{ count }}
+      <AppUserCardsList :list="list" />
     </template>
   </AppUserList>
 </template>
 
 <script setup>
 import AppUserList from "./components/AppUserList.vue"
+import AppUserCardsList from "./components/AppUserCardsList.vue"
 </script>
 
 <style></style>
