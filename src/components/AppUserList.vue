@@ -19,7 +19,7 @@
               />
               <div>
                 <div>{{ item.name.first }}</div>
-                <slot name="secondrow" :item="item"></slot>
+                <slot name="secondrow" :item="item" :remove="remove"></slot>
               </div>
             </div>
           </slot>
@@ -64,6 +64,9 @@ const load = async () => {
     error = err
     return error
   }
+}
+const remove = (item) => {
+  data.results = data.results.filter((entry) => entry.email !== item.email)
 }
 </script>
 
